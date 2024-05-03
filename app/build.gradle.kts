@@ -1,14 +1,17 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+//    // add google service plugin for firebase
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.locketandroid"
+    namespace = "com.hhoangphuoc.diarybuddy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.locketandroid"
+        applicationId = "com.hhoangphuoc.diarybuddy"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
@@ -51,14 +54,51 @@ android {
 
 dependencies {
 
+    //android core and lifecycle
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    //compose for app ui
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+    // Material Design
     implementation(libs.androidx.material3)
+
+    //Glance for app widgets
+    implementation(libs.androidx.glance.appwidget)
+
+    // Wearable
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.core.splashscreen)
+
+    //tile and horologist
+    implementation(libs.androidx.tiles)
+    implementation(libs.androidx.tiles.material)
+    implementation(libs.horologist.compose.tools)
+    implementation(libs.horologist.tiles)
+    implementation(libs.androidx.watchface.complications.data.source.ktx)
+
+
+    // Firebase
+
+    // Import the Firebase BoM
+    //noinspection UseTomlInstead
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    //noinspection UseTomlInstead
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+
+    //testing packages
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +106,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
 }

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Locket Android"
+rootProject.name = "Diary Buddy"
 include(":app")
- 
+include(":diarybuddywear")

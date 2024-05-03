@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264631038667",
+    "project_id": "diarybuddy-422017",
+    "storage_bucket": "diarybuddy-422017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264631038667:android:b1caf9fecd5410302e214e",
+        "android_client_info": {
+          "package_name": "com.hhoangphuoc.diarybuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2ZlS_DYjZqS702N8chZ0fH8v1bVhIdTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

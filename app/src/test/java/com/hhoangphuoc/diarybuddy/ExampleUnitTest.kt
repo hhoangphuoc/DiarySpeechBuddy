@@ -1,4 +1,4 @@
-package com.example.locketandroid
+package com.hhoangphuoc.diarybuddy
 
 import org.junit.Test
 

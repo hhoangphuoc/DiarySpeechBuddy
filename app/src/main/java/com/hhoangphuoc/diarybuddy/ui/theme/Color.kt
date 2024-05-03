@@ -1,4 +1,4 @@
-package com.example.locketandroid.ui.theme
+package com.hhoangphuoc.diarybuddy.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

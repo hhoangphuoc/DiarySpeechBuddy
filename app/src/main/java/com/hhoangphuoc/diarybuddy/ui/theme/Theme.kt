@@ -1,7 +1,6 @@
-package com.example.locketandroid.ui.theme
+package com.hhoangphuoc.diarybuddy.ui.theme
 
 import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -38,7 +37,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun LocketAndroidTheme(
+fun DiaryBuddyTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

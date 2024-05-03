@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.hhoangphuoc.diarybuddy" />
+                  <option name="mobileSdkAppId" value="1:264631038667:android:b1caf9fecd5410302e214e" />
+                  <option name="projectId" value="diarybuddy-422017" />
+                  <option name="projectNumber" value="264631038667" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

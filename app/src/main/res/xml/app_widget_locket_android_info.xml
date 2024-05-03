@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Locket will be resizable, minimum resize is 64dp but a square 2x2 shape, updated every 24 hours, show in the home screen-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:description="@string/diary_buddy_widget_description"
+    android:minHeight="96dp"
+    android:minWidth="96dp"
+    android:minResizeHeight="64dp"
+    android:minResizeWidth="64dp"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellHeight="2"
+    android:targetCellWidth="2"
+    android:updatePeriodMillis="86400000"
+    android:widgetCategory="home_screen"
+    >
+</appwidget-provider>
