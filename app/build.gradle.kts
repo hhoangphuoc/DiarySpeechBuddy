@@ -70,17 +70,17 @@ dependencies {
     //Glance for app widgets
     implementation(libs.androidx.glance.appwidget)
 
-    // Wearable
-    implementation(libs.androidx.compose.material)
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.core.splashscreen)
-
-    //tile and horologist
-    implementation(libs.androidx.tiles)
-    implementation(libs.androidx.tiles.material)
-    implementation(libs.horologist.compose.tools)
-    implementation(libs.horologist.tiles)
-    implementation(libs.androidx.watchface.complications.data.source.ktx)
+//    // Wearable
+//    implementation(libs.androidx.compose.material)
+//    implementation(libs.androidx.compose.foundation)
+//    implementation(libs.androidx.core.splashscreen)
+//
+//    //tile and horologist
+//    implementation(libs.androidx.tiles)
+//    implementation(libs.androidx.tiles.material)
+//    implementation(libs.horologist.compose.tools)
+//    implementation(libs.horologist.tiles)
+//    implementation(libs.androidx.watchface.complications.data.source.ktx)
 
 
     // Firebase
@@ -88,11 +88,15 @@ dependencies {
     // Import the Firebase BoM
     //noinspection UseTomlInstead
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-
-
     // TODO: Add the dependencies for Firebase products you want to use
     //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-analytics")
+
+    //wearable dependencies
+    implementation(libs.play.services.wearable)
+
+    //speech dependencies
+    implementation(libs.google.cloud.speech)
 
 
     // Add the dependencies for any other desired Firebase products

@@ -4,7 +4,7 @@
  * changes to the libraries and their usages.
  */
 
-package com.hhoangphuoc.diarybuddy.wear.presentation
+package com.hhoangphuoc.diarybuddywear.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,8 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
-import com.hhoangphuoc.diarybuddy.R
-import com.hhoangphuoc.diarybuddy.wear.presentation.theme.DiaryBuddyTheme
+import com.hhoangphuoc.diarybuddywear.R
+import com.hhoangphuoc.diarybuddywear.presentation.theme.DiaryBuddyTheme
 
 class DiaryBuddyWear : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,13 +51,13 @@ fun WearApp(greetingName: String) {
             contentAlignment = Alignment.Center
         ) {
             TimeText()
-            Greeting2(greetingName = greetingName)
+            Greeting(greetingName = greetingName)
         }
     }
 }
 
 @Composable
-fun Greeting2(greetingName: String) {
+fun Greeting(greetingName: String) {
     Text(
         modifier = Modifier.fillMaxWidth(),
         textAlign = TextAlign.Center,

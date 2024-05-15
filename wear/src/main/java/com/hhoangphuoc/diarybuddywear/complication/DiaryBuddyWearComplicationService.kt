@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddy.wear.complication
+package com.hhoangphuoc.diarybuddywear.complication
 
 import androidx.wear.watchface.complications.data.ComplicationData
 import androidx.wear.watchface.complications.data.ComplicationType
@@ -11,7 +11,7 @@ import java.util.Calendar
 /**
  * Skeleton for complication data source that returns short text.
  */
-class DiaryBuddyComplicationService : SuspendingComplicationDataSourceService() {
+class DiaryBuddyWearComplicationService : SuspendingComplicationDataSourceService() {
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? {
         if (type != ComplicationType.SHORT_TEXT) {

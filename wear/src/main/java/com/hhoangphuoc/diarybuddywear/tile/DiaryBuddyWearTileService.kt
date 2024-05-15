@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddy.wear.tile
+package com.hhoangphuoc.diarybuddywear.tile
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -26,7 +26,7 @@ private const val RESOURCES_VERSION = "0"
  * Skeleton for a tile with no images.
  */
 @OptIn(ExperimentalHorologistApi::class)
-class DiaryBuddyTileService : SuspendingTileService() {
+class DiaryBuddyWearTileService : SuspendingTileService() {
 
     override suspend fun resourcesRequest(
         requestParams: RequestBuilders.ResourcesRequest
@@ -65,6 +65,6 @@ private fun tileLayout(context: Context): LayoutElementBuilders.LayoutElement {
     showBackground = true
 )
 @Composable
-fun TilePreview2() {
+fun TilePreview() {
     LayoutRootPreview(root = tileLayout(LocalContext.current))
 }

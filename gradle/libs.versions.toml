@@ -5,7 +5,7 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.7.0"
+lifecycleRuntimeKtx = "2.8.0"
 activityCompose = "1.9.0"
 composeBom = "2024.05.00"
 glanceAppwidget = "1.0.0"
@@ -14,10 +14,11 @@ composeFoundation = "1.3.1"
 coreSplashscreen = "1.0.1"
 tiles = "1.3.0"
 tilesMaterial = "1.3.0"
-horologistComposeTools = "0.6.10"
-horologistTiles = "0.6.10"
+horologistComposeTools = "0.6.11"
+horologistTiles = "0.6.11"
 watchfaceComplicationsDataSourceKtx = "1.2.1"
 playServicesWearable = "18.1.0"
+googleCloudSpeech = "4.38.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +45,7 @@ horologist-compose-tools = { group = "com.google.android.horologist", name = "ho
 horologist-tiles = { group = "com.google.android.horologist", name = "horologist-tiles", version.ref = "horologistTiles" }
 androidx-watchface-complications-data-source-ktx = { group = "androidx.wear.watchface", name = "watchface-complications-data-source-ktx", version.ref = "watchfaceComplicationsDataSourceKtx" }
 play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "playServicesWearable" }
+google-cloud-speech = { group = "com.google.cloud", name = "google-cloud-speech", version.ref = "googleCloudSpeech" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
