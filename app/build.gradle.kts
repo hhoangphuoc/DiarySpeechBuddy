@@ -93,20 +93,19 @@ dependencies {
     implementation(libs.androidx.glance.appwidget)
 
     // Firebase
-
-    // Import the Firebase BoM
-    //noinspection UseTomlInstead
-    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     // TODO: Add the dependencies for Firebase products you want to use
-    //noinspection UseTomlInstead
-    implementation("com.google.firebase:firebase-analytics")
+    // Import the Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+//    implementation(libs.firebase.firestore)
+//    implementation(libs.firebase.storage)
 
     //wearable dependencies
     implementation(libs.play.services.wearable)
 
     //speech dependencies
     implementation(libs.google.cloud.speech)
-    implementation(libs.firebase.auth)
 
     //testing packages
     testImplementation(libs.junit)
