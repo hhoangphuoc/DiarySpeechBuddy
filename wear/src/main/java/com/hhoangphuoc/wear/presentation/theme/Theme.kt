@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddywear.presentation.theme
+package com.hhoangphuoc.wear.presentation.theme
 
 import androidx.compose.runtime.Composable
 import androidx.wear.compose.material.MaterialTheme

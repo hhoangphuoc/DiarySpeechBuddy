@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddywear.tile
+package com.hhoangphuoc.wear.tile
 
 import android.content.Context
 import androidx.compose.runtime.Composable

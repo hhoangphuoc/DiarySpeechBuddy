@@ -4,7 +4,7 @@
  * changes to the libraries and their usages.
  */
 
-package com.hhoangphuoc.diarybuddywear.presentation
+package com.hhoangphuoc.wear.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,8 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
-import com.hhoangphuoc.diarybuddywear.R
-import com.hhoangphuoc.diarybuddywear.presentation.theme.DiaryBuddyTheme
+import com.hhoangphuoc.wear.R
+import com.hhoangphuoc.wear.presentation.theme.DiaryBuddyTheme
 
 class DiaryBuddyWear : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

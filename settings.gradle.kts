@@ -22,5 +22,3 @@ dependencyResolutionManagement {
 rootProject.name = "Diary Buddy"
 include(":app")
 include(":diarybuddywear:diarybuddywear")
-include(":wear")
-include(":connectivity")

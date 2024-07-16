@@ -53,10 +53,16 @@ android {
 }
 
 dependencies {
+    dependencies {
+        implementation(libs.feature.delivery)
+    }
 
     //android core and lifecycle
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    //viewmodel
+    implementation(libs.androidx.runtime.livedata)
 
     //compose for app ui
     implementation(libs.androidx.activity.compose)
@@ -65,12 +71,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
 
-    //navigation
-
-    // Java language implementation
+    //navigation-------------------------------------------------------------
+    // for Java
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-    // Kotlin
+    // for Kotlin
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     // Feature module Support
@@ -79,27 +84,13 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
 
-    implementation(libs.androidx.runtime.livedata)
-
-
     // Material Design
     implementation(libs.androidx.material3)
+    //icons
+    implementation(libs.androidx.material.icons.extended)
 
     //Glance for app widgets
     implementation(libs.androidx.glance.appwidget)
-
-//    // Wearable
-//    implementation(libs.androidx.compose.material)
-//    implementation(libs.androidx.compose.foundation)
-//    implementation(libs.androidx.core.splashscreen)
-//
-//    //tile and horologist
-//    implementation(libs.androidx.tiles)
-//    implementation(libs.androidx.tiles.material)
-//    implementation(libs.horologist.compose.tools)
-//    implementation(libs.horologist.tiles)
-//    implementation(libs.androidx.watchface.complications.data.source.ktx)
-
 
     // Firebase
 
@@ -116,10 +107,6 @@ dependencies {
     //speech dependencies
     implementation(libs.google.cloud.speech)
     implementation(libs.firebase.auth)
-
-
-    // Add the dependencies for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
 
     //testing packages
     testImplementation(libs.junit)

@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddywear.complication
+package com.hhoangphuoc.wear.complication
 
 import androidx.wear.watchface.complications.data.ComplicationData
 import androidx.wear.watchface.complications.data.ComplicationType

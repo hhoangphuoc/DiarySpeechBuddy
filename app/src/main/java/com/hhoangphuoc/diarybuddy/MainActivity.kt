@@ -2,7 +2,6 @@ package com.hhoangphuoc.diarybuddy
 
 //import local classes
 import android.os.Bundle
-import android.speech.SpeechRecognizer
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,27 +11,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.hhoangphuoc.diarybuddy.auth.AuthViewModel
-import com.hhoangphuoc.diarybuddy.speech.DiaryRecognitionListener
 import com.hhoangphuoc.diarybuddy.ui.theme.DiaryBuddyTheme
 
 
 class MainActivity : ComponentActivity() {
 
-    //speech objects
-    private var diarySpeechRecognizer: SpeechRecognizer? = null
-    private var diaryRecognitionListener: DiaryRecognitionListener? = null
+//    //add speech recognition component to the model
+//    //using lazy - only initialize when needed / it was activated
+//    val diarySpeechRecognition by lazy {
+//        DiarySpeechRecognition(application)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
 
-        //declare the list of view model for app
+        //authentication model
         val authViewModel : AuthViewModel by viewModels()
-
-
-        // Initialize the SpeechRecognizer
-        diarySpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
 
         //UI CONTENT
         setContent {
