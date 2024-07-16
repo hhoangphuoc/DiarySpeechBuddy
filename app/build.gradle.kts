@@ -64,6 +64,24 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+    //navigation
+
+    // Java language implementation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    // Kotlin
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    // Feature module Support
+    implementation(libs.androidx.navigation.dynamic.features.fragment)
+    // Jetpack Compose Integration
+    implementation(libs.androidx.navigation.compose)
+
+
+    implementation(libs.androidx.runtime.livedata)
+
+
     // Material Design
     implementation(libs.androidx.material3)
 
@@ -87,7 +105,7 @@ dependencies {
 
     // Import the Firebase BoM
     //noinspection UseTomlInstead
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     // TODO: Add the dependencies for Firebase products you want to use
     //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-analytics")
@@ -97,6 +115,7 @@ dependencies {
 
     //speech dependencies
     implementation(libs.google.cloud.speech)
+    implementation(libs.firebase.auth)
 
 
     // Add the dependencies for any other desired Firebase products
@@ -108,7 +127,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.navigation.testing)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
 
 }

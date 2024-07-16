@@ -12,7 +12,12 @@
           "package_name": "com.hhoangphuoc.diarybuddy"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "264631038667-mntnvhvb2jge5t4ju5nmc3fq01mhd8td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC2ZlS_DYjZqS702N8chZ0fH8v1bVhIdTE"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264631038667-mntnvhvb2jge5t4ju5nmc3fq01mhd8td.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

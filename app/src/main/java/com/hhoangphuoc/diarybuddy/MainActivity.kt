@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.speech.SpeechRecognizer
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.hhoangphuoc.diarybuddy.auth.AuthViewModel
 import com.hhoangphuoc.diarybuddy.speech.DiaryRecognitionListener
 import com.hhoangphuoc.diarybuddy.ui.theme.DiaryBuddyTheme
 
@@ -25,6 +25,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        enableEdgeToEdge()
+
+        //declare the list of view model for app
+        val authViewModel : AuthViewModel by viewModels()
+
+
         // Initialize the SpeechRecognizer
         diarySpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
 
@@ -32,11 +38,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             DiaryBuddyTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
+                Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+//                    color = MaterialTheme.colorScheme.background
+                ) { innerpadding ->
+                    AppNavigation(modifier = Modifier.padding(innerpadding), authViewModel)
                 }
             }
         }
@@ -48,18 +54,13 @@ class MainActivity : ComponentActivity() {
 
 
 //UI RENDERED CONTENT
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DiaryBuddyTheme {
-        Greeting("Android")
-    }
-}
+
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    DiaryBuddyTheme {
+////        Greeting("Android")
+//        HomePage()
+//    }
+//}
