@@ -1,4 +1,4 @@
-package com.hhoangphuoc.diarybuddy.speech
+package com.hhoangphuoc.diarybuddy.ui.components
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -25,29 +25,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
-
+import com.hhoangphuoc.diarybuddy.data.service.VoiceRecognitionService
+import com.hhoangphuoc.diarybuddy.domain.model.SpeechState
+import com.hhoangphuoc.diarybuddy.ui.MainEvent
 
 @Composable
-fun SpeechPage (
+fun SpeechPage(
+    speechState: SpeechState, // Receives state from MainViewModel
+    onEvent: (MainEvent) -> Unit, // Sends events to MainViewModel
     modifier: Modifier = Modifier,
 ) {
 
-    //add speech recognition component to the model
-    //using lazy - only initialize when needed / it was activated
-    val context = LocalContext.current
-    val diarySpeechRecognition by lazy {
-        DiarySpeechRecognition(context)
-    }
-
-    //TODO: Uncommented once the connection is established
-//    val authState = authViewModel.authState.observeAsState() //checking the authentication status of the user
-//
-//    LaunchedEffect(authState.value) {
-//        when (authState.value) {
-//            is ManualAuthState.Unauthenticated -> navController.navigate("login")  //if user is not authenticated, navigate to login page
-//            else -> Unit //stay in the page
-//        }
-//    }
     var canRecorded by remember {
         mutableStateOf(false)
     }
@@ -65,18 +53,15 @@ fun SpeechPage (
         recordAudioLauncher.launch(android.Manifest.permission.RECORD_AUDIO)
     }
 
-    val speechState by diarySpeechRecognition.speechState.collectAsState() //get the current speaking state of the recogniser
-
     //content of the home page
-    //TODO: Create UI for the home page
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
                     if (speechState.isSpeaking) {
-                        diarySpeechRecognition.stopListening()
+                        onEvent(MainEvent.StopListening) // Send Stop event
                     } else {
-                        diarySpeechRecognition.startListening()
+                        onEvent(MainEvent.StartListening) // Send Start event
                     }
                 }
             ) {
