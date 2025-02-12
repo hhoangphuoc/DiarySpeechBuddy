@@ -57,9 +57,14 @@ dependencies {
         implementation(libs.feature.delivery)
     }
 
-    //android core and lifecycle
+    //Life Cycles and Coroutines
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Kotlin Coroutines (for asynchronous operations)
+    implementation(libs.kotlinx.coroutines.android)
+
 
     //viewmodel
     implementation(libs.androidx.runtime.livedata)
@@ -75,6 +80,7 @@ dependencies {
     // for Java
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+
     // for Kotlin
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -98,14 +104,18 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
-//    implementation(libs.firebase.firestore)
-//    implementation(libs.firebase.storage)
 
     //wearable dependencies
     implementation(libs.play.services.wearable)
 
     //speech dependencies
     implementation(libs.google.cloud.speech)
+
+
+    // Google AI Studio
+    implementation(libs.generativeai.android)
+    implementation(libs.generativeai)
+
 
     //testing packages
     testImplementation(libs.junit)
