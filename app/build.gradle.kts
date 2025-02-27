@@ -1,9 +1,12 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 
 //    // add google service plugin for firebase
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -22,6 +25,8 @@ android {
             useSupportLibrary = true
         }
     }
+    val localProperties = gradleLocalProperties(rootDir, providers)
+    val apiKey: String = localProperties.getProperty("GEMINI_API_KEY") ?: ""
 
     buildTypes {
         release {
@@ -31,6 +36,24 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+
+        getByName("debug") {
+            versionNameSuffix = "-debug"
+            applicationIdSuffix= ".debug"
+            buildConfigField("String", "GEMINI_API_KEY", "\"${apiKey}\"")
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            buildConfigField("String", "GEMINI_API_KEY", "\"${apiKey}\"")
+        }
+
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -41,6 +64,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true //FIXME: Adding to use Generative AI
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -96,17 +120,17 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
 
     //Glance for app widgets
-    implementation(libs.androidx.glance.appwidget)
+//    implementation(libs.androidx.glance.appwidget)
 
     // Firebase
     // TODO: Add the dependencies for Firebase products you want to use
     // Import the Firebase BoM
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.vertexai) //TODO: USING VERTEXAI INSTEAD OF GENERATIVEAI
+
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
 
-    //wearable dependencies
-    implementation(libs.play.services.wearable)
 
     //speech dependencies
     implementation(libs.google.cloud.speech)
@@ -114,7 +138,12 @@ dependencies {
 
     // Google AI Studio
     implementation(libs.generativeai.android)
-    implementation(libs.generativeai)
+
+    implementation(libs.support.annotations)
+    implementation(libs.generativeai) // For Compose navigation
+    
+    // Security for encrypted shared preferences
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
 
     //testing packages

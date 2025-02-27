@@ -6,6 +6,17 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">From the Square world,\nHello, %1$s!</string>
+    
+    <!-- Settings strings -->
+    <string name="settings_title">Settings</string>
+    <string name="api_key_title">API Configuration</string>
+    <string name="api_key_label">Gemini API Key</string>
+    <string name="api_key_placeholder">Enter your Gemini API key</string>
+    <string name="api_key_privacy_note">Your API key is stored securely on your device and is not shared with anyone.</string>
+    <string name="save_button">Save</string>
+    <string name="api_key_instructions_title">How to get a Gemini API key:</string>
+    <string name="api_key_instructions">1. Go to Google AI Studio (ai.google.dev)\n2. Sign in with your Google account\n3. Navigate to the API keys section\n4. Create a new API key\n5. Copy and paste the key above</string>
+    
     <!--    <string name="title_activity_diary_buddy_wear">DiaryBuddyWear</string>-->
 <!--    <string name="tile_label">Example tile</string>-->
 <!--    <string name="complication_label">Example complication</string>-->
